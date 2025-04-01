@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyxa V2 - Executor de Roblox</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: rgb(10, 10, 10);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 250px;
+            background-color: rgb(30, 30, 30);
+            padding: 20px;
+        }
+
+        .left-sidebar {
+            left: 0;
+        }
+
+        .right-sidebar {
+            right: 0;
+        }
+
+        .logo {
+            margin: 20px auto;
+            max-width: 150px;
+        }
+
+        .download-btn {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar left-sidebar"></div>
+    <div class="sidebar right-sidebar"></div>
+    <div class="container">
+        <img src="logo.png" alt="Nyxa V2 Logo" class="logo">
+        <h1>Nyxa V2 - Executor de Roblox</h1>
+        <p>Execute seus scripts com rapidez e eficiência com o Nyxa V2. Clique no botão abaixo para baixar.</p>
+        <button class="download-btn" onclick="downloadNyxa()">Baixar Agora</button>
+        <p class="footer">Desenvolvido por Lawzera</p>
+    </div>
+    <script>
+        function downloadNyxa() {
+            window.location.href = 'NyxaV2.zip';
+        }
+    </script>
+</body>
+</html>
