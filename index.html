@@ -40,16 +40,35 @@
             gap: 20px;
         }
 
-        h1 {
-            font-size: 3rem;
-            margin: 0;
-            color: #3498db;
-            animation: glow 2s infinite alternate;
+        .logo {
+            max-width: 220px;
+            animation: fadeIn 1s ease;
         }
 
-        @keyframes glow {
-            from { text-shadow: 0 0 5px #3498db; }
-            to { text-shadow: 0 0 20px #3498db; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .features {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: rgb(30, 30, 30);
+            border-radius: 10px;
+            max-width: 600px;
+        }
+
+        .feature-item {
+            margin: 10px 0;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s ease;
+        }
+
+        .feature-item:hover {
+            transform: scale(1.05);
         }
 
         .download-btn {
@@ -58,34 +77,21 @@
             background-color: #3498db;
             color: white;
             border: none;
-            border-radius: 12px;
+            border-radius: 10px;
             cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
             font-size: 1.2rem;
-            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         .download-btn:hover {
             background-color: #2980b9;
-            transform: translateY(-5px);
-        }
-
-        .features {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: rgb(30, 30, 30);
-            border-radius: 12px;
-            max-width: 600px;
-            animation: fadeIn 1s ease;
-        }
-
-        .feature-item {
-            margin: 10px 0;
-            font-size: 1.1rem;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -98,9 +104,9 @@
         <button class="download-btn" onclick="downloadNyxa()">Baixar Agora</button>
         <div class="features">
             <h2>Funcionalidades:</h2>
-            <div class="feature-item"><i class="fa-solid fa-rocket"></i> Auto Execute</div>
-            <div class="feature-item"><i class="fa-solid fa-percent"></i> 92% UNC</div>
-            <div class="feature-item"><i class="fa-solid fa-desktop"></i> Interface Simples</div>
+            <div class="feature-item"><i class="fa-solid fa-rocket"></i> Auto Execute - Inicie scripts automaticamente</div>
+            <div class="feature-item"><i class="fa-solid fa-percent"></i> 92% UNC - Alta taxa de sucesso</div>
+            <div class="feature-item"><i class="fa-solid fa-desktop"></i> Interface Simples - Fácil de usar</div>
         </div>
         <p class="footer">Desenvolvido por Lawzera</p>
     </div>
@@ -115,26 +121,27 @@
         canvas.height = window.innerHeight;
 
         let particles = [];
-        const particleCount = 100;
+        const particleCount = 150;
 
         class Particle {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
                 this.size = Math.random() * 3 + 1;
-                this.speedX = Math.random() * 0.6 - 0.3;
-                this.speedY = Math.random() * 0.6 - 0.3;
+                this.speedX = Math.random() * 2 - 1;
+                this.speedY = Math.random() * 2 - 1;
             }
 
             update() {
                 this.x += this.speedX;
                 this.y += this.speedY;
+
                 if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
                 if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
             }
 
             draw() {
-                ctx.fillStyle = 'rgba(52, 152, 219, 0.6)';
+                ctx.fillStyle = 'rgba(52, 152, 219, 0.5)';
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
@@ -150,7 +157,7 @@
 
         function animateParticles() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(particle => {
+            particles.forEach((particle) => {
                 particle.update();
                 particle.draw();
             });
