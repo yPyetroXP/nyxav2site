@@ -21,6 +21,7 @@
         min-height: 100vh;
         text-align: center;
         padding: 20px;
+        gap: 20px;
     }
 
     .sidebar {
@@ -42,29 +43,34 @@
 
     .logo {
         margin: 20px auto;
-        max-width: 200px;
-        border-radius: 10px;
+        max-width: 220px;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     }
 
     h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
         margin: 10px 0;
+        color: #3498db;
     }
 
     p {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         margin: 10px 0 20px;
+        max-width: 600px;
+        color: #ccc;
     }
 
     .download-btn {
         margin-top: 20px;
-        padding: 15px 30px;
+        padding: 15px 40px;
         background-color: #3498db;
         color: white;
         border: none;
-        border-radius: 8px;
+        border-radius: 10px;
         cursor: pointer;
         transition: background-color 0.3s ease, transform 0.2s ease;
+        font-size: 1.2rem;
     }
 
     .download-btn:hover {
@@ -74,7 +80,7 @@
 
     .footer {
         margin-top: 30px;
-        font-size: 0.9em;
+        font-size: 1rem;
         color: #888;
     }
 
@@ -84,19 +90,19 @@
         }
 
         .container {
-            padding: 10px;
+            padding: 15px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
         }
 
         p {
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
 
         .download-btn {
-            padding: 12px 25px;
+            padding: 12px 30px;
             font-size: 1rem;
         }
     }
@@ -109,7 +115,7 @@
     <div class="container">
         <img src="logo.png" alt="Nyxa V2 Logo" class="logo">
         <h1>Nyxa V2 - Executor de Roblox</h1>
-        <p>Execute seus scripts com rapidez e eficiência com o Nyxa V2. Clique no botão abaixo para baixar.</p>
+        <p>O Nyxa V2 é um executor de scripts para Roblox que oferece desempenho otimizado e fácil utilização. Aproveite a melhor experiência para rodar seus scripts favoritos!</p>
         <button class="download-btn" onclick="downloadNyxa()">Baixar Agora</button>
         <p class="footer">Desenvolvido por Lawzera</p>
     </div>
