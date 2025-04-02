@@ -1,73 +1,107 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyxa V2 - Executor de Roblox</title>
     <meta property="og:title" content="Nyxa V2 - Executor de Roblox">
     <meta property="og:description" content="Execute scripts no Roblox com rapidez e eficiência usando o Nyxa V2!">
     <meta property="og:image" content="logo.png">
     <meta property="og:url" content="https://nyxaexecutor.vercel.app/">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nyxa V2 - Executor de Roblox</title>
     <style>
         body {
             margin: 0;
             background-color: rgb(10, 10, 10);
             color: white;
             font-family: Arial, sans-serif;
+        }.container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 250px;
+        background-color: rgb(30, 30, 30);
+        padding: 20px;
+    }
+
+    .left-sidebar {
+        left: 0;
+    }
+
+    .right-sidebar {
+        right: 0;
+    }
+
+    .logo {
+        margin: 20px auto;
+        max-width: 200px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin: 10px 0;
+    }
+
+    p {
+        font-size: 1.2rem;
+        margin: 10px 0 20px;
+    }
+
+    .download-btn {
+        margin-top: 20px;
+        padding: 15px 30px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .download-btn:hover {
+        background-color: #2980b9;
+        transform: scale(1.05);
+    }
+
+    .footer {
+        margin-top: 30px;
+        font-size: 0.9em;
+        color: #888;
+    }
+
+    @media (max-width: 768px) {
+        .sidebar {
+            display: none;
         }
 
         .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
+            padding: 10px;
         }
 
-        .sidebar {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            width: 250px;
-            background-color: rgb(30, 30, 30);
-            padding: 20px;
+        h1 {
+            font-size: 2rem;
         }
 
-        .left-sidebar {
-            left: 0;
-        }
-
-        .right-sidebar {
-            right: 0;
-        }
-
-        .logo {
-            margin: 20px auto;
-            max-width: 150px;
+        p {
+            font-size: 1rem;
         }
 
         .download-btn {
-            margin-top: 20px;
-            padding: 15px 30px;
-            background-color: #3498db;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+            padding: 12px 25px;
+            font-size: 1rem;
         }
+    }
+</style>
 
-        .download-btn:hover {
-            background-color: #2980b9;
-        }
-
-        .footer {
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: #888;
-        }
-    </style>
 </head>
 <body>
     <div class="sidebar left-sidebar"></div>
