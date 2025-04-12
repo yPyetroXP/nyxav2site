@@ -1,171 +1,193 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nyxa V2 - Executor de Roblox</title>
-    <meta property="og:title" content="Nyxa V2 - Executor de Roblox">
-    <meta property="og:description" content="Execute scripts no Roblox com rapidez e eficiência usando o Nyxa V2!">
-    <meta property="og:image" content="logo.png">
-    <meta property="og:url" content="https://nyxaexecutor.vercel.app/">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body {
-            margin: 0;
-            background-color: rgb(10, 10, 10);
-            color: white;
-            font-family: 'JetBrains Mono', monospace;
-            overflow: hidden;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nyxa V2 - Executor de Roblox</title>
+<meta property="og:title" content="Nyxa V2 - Executor de Roblox">
+<meta property="og:description" content="Execute scripts no Roblox com rapidez e eficiência usando o Nyxa V2!">
+<meta property="og:image" content="logo.png">
+<meta property="og:url" content="https://nyxaexecutor.vercel.app/">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+    body {
+        margin: 0;
+        background-color: #0a0a0a;
+        color: #f0f0f0;
+        font-family: 'JetBrains Mono', monospace;
+    }
 
-        canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
+    canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            width: 100vw;
-            text-align: center;
-            padding: 20px;
-            gap: 20px;
-        }
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        min-height: 100vh;
+        padding: 40px 20px;
+        gap: 24px;
+    }
 
-        .logo {
-            max-width: 220px;
-            animation: fadeIn 1s ease;
-        }
+    .logo {
+        max-width: 200px;
+        animation: fadeIn 1s ease;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
-        }
+    h1 {
+        font-size: 2.5rem;
+        margin: 10px 0;
+        color: #58a6ff;
+    }
 
-        .features {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: rgb(30, 30, 30);
-            border-radius: 10px;
-            max-width: 600px;
-        }
+    p {
+        max-width: 600px;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: #d0d0d0;
+    }
 
-        .feature-item {
-            margin: 10px 0;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: transform 0.2s ease;
-        }
+    .features {
+        background: #151515;
+        padding: 25px;
+        border-radius: 12px;
+        max-width: 600px;
+        box-shadow: 0 0 15px rgba(88,166,255,0.2);
+    }
 
-        .feature-item:hover {
-            transform: scale(1.05);
-        }
+    .features h2 {
+        color: #58a6ff;
+        margin-bottom: 15px;
+    }
 
-        .download-btn {
-            margin-top: 20px;
-            padding: 15px 40px;
-            background-color: #3498db;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            font-size: 1.2rem;
-            animation: pulse 2s infinite;
-        }
+    .feature-item {
+        margin: 12px 0;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: transform 0.2s ease;
+    }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
+    .feature-item:hover {
+        transform: scale(1.04);
+        color: #58a6ff;
+    }
 
-        .download-btn:hover {
-            background-color: #2980b9;
-            transform: scale(1.1);
-        }
-    </style>
+    .download-btn {
+        padding: 16px 48px;
+        background-color: #58a6ff;
+        color: #0a0a0a;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 1.3rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+        animation: pulse 2s infinite;
+    }
+
+    .download-btn:hover {
+        background-color: #3498db;
+        transform: scale(1.07);
+    }
+
+    .footer {
+        margin-top: 50px;
+        font-size: 0.9rem;
+        color: #777;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+    }
+</style>
 </head>
 <body>
-    <canvas id="background"></canvas>
-    <div class="container">
-        <img src="logo.png" alt="Nyxa V2 Logo" class="logo">
-        <h1>Nyxa V2 - Executor de Roblox</h1>
-        <p>O Nyxa V2 é um executor de scripts para Roblox que oferece desempenho otimizado e fácil utilização. Aproveite a melhor experiência para rodar seus scripts favoritos!</p>
-        <button class="download-btn" onclick="downloadNyxa()">Baixar Agora</button>
-        <div class="features">
-            <h2>Funcionalidades:</h2>
-            <div class="feature-item"><i class="fa-solid fa-rocket"></i> Auto Execute - Inicie scripts automaticamente</div>
-            <div class="feature-item"><i class="fa-solid fa-percent"></i> 92% UNC - Alta taxa de sucesso</div>
-            <div class="feature-item"><i class="fa-solid fa-desktop"></i> Interface Simples - Fácil de usar</div>
-        </div>
-        <p class="footer">Desenvolvido por Lawzera</p>
+<canvas id="background"></canvas>
+<div class="container">
+    <img src="logo.png" alt="Nyxa V2 Logo" class="logo">
+    <h1>Nyxa V2 - Executor de Roblox</h1>
+    <p>Execute scripts no Roblox com rapidez e eficiência. Experimente a melhor performance para rodar seus scripts favoritos!</p>
+    <button class="download-btn" onclick="downloadNyxa()">
+        <i class="fa-solid fa-download"></i> Baixar Agora
+    </button>
+    <div class="features">
+        <h2>Funcionalidades:</h2>
+        <div class="feature-item"><i class="fa-solid fa-rocket"></i> Auto Execute - Scripts automáticos</div>
+        <div class="feature-item"><i class="fa-solid fa-percent"></i> 92% UNC - Alta taxa de sucesso</div>
+        <div class="feature-item"><i class="fa-solid fa-desktop"></i> Interface Simples e Intuitiva</div>
     </div>
-    <script>
-        function downloadNyxa() {
-            window.location.href = 'NyxaV2.zip';
-        }
+    <p class="footer">Desenvolvido por Lawzera</p>
+</div>
+<script>
+    function downloadNyxa() {
+        window.location.href = 'NyxaV2.zip';
+    }
 
-        const canvas = document.getElementById('background');
-        const ctx = canvas.getContext('2d');
+    const canvas = document.getElementById('background');
+    const ctx = canvas.getContext('2d');
+    function resizeCanvas() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
 
-        let particles = [];
-        const particleCount = 150;
+    let particles = [];
+    const particleCount = 150;
 
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 3 + 1;
-                this.speedX = Math.random() * 2 - 1;
-                this.speedY = Math.random() * 2 - 1;
-            }
-
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-
-                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-            }
-
-            draw() {
-                ctx.fillStyle = 'rgba(52, 152, 219, 0.5)';
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 3 + 1;
+            this.speedX = Math.random() * 2 - 1;
+            this.speedY = Math.random() * 2 - 1;
         }
-
-        function initParticles() {
-            particles = [];
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+            if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
         }
-
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach((particle) => {
-                particle.update();
-                particle.draw();
-            });
-            requestAnimationFrame(animateParticles);
+        draw() {
+            ctx.fillStyle = 'rgba(88,166,255,0.4)';
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
         }
+    }
 
-        initParticles();
-        animateParticles();
-    </script>
+    function initParticles() {
+        particles = [];
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+    }
+
+    function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => { p.update(); p.draw(); });
+        requestAnimationFrame(animateParticles);
+    }
+
+    initParticles();
+    animateParticles();
+</script>
 </body>
 </html>
